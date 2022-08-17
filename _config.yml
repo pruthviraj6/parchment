@@ -1,4 +1,4 @@
-title: cd /home/menu
+title: cd /home
 author: pruthvi raj
 subtitle: pursuing infosec
 
@@ -18,11 +18,13 @@ sass:
     sass_dir: css
 
 navbar:
- - name: "About"
-   link: "about"
- - name: "Resume"
-   absolute-link: "https://raw.githubusercontent.com/burningatlas/burningatlas.github.io/master/Diya-Gupta.pdf"
+ - name: "Tags"
+   link: "../tags"
  - name: "Projects"
    link: "projects"
+ - name: "Resume"
+   absolute-link: "https://raw.githubusercontent.com/burningatlas/burningatlas.github.io/master/Diya-Gupta.pdf"
+ - name: "About"
+   link: "about"
 
 markdown: kramdown
