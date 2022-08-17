@@ -2,7 +2,7 @@ title: cd /home/menu
 author: pruthvi raj
 subtitle: pursuing infosec
 
-url: "https://pruthvirajbhat.github.io"
+url: "https://burningatlas.github.io"
 
 
 footer_only_homepage: true
@@ -21,7 +21,7 @@ navbar:
  - name: "About"
    link: "about"
  - name: "Resume"
-   absolute-link: "https://raw.githubusercontent.com/pruthvirajbhat/pruthvirajbhat.github.io/master/Diya-Gupta.pdf"
+   absolute-link: "https://raw.githubusercontent.com/burningatlas/burningatlas.github.io/master/Diya-Gupta.pdf"
  - name: "Projects"
    link: "projects"
 
