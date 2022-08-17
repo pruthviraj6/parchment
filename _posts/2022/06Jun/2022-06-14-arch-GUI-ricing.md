@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Arch Linux Installation, GUI and ricing
+title: Arch ricing
 subtitle: taking complete system control
 tags: [playingwithOS]
 odate: 04-07-2022
