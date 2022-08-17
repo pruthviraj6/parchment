@@ -1,32 +1,17 @@
 ---
-layout: post
-title: Tags
+layout: default
+permalink: /tags/
 ---
-<section>        
-    {% assign sorted_tags = site.tags | sort %}
-    {% for tag in sorted_tags  %}
-        <a href="#{{ tag[0] | slugify }}"><code>#{{ tag[0] }}</code></a>
-    {% endfor %}
-</section>
 
-<section class="tag-list">
-    {% assign sorted_tags = site.tags | sort %}
-    {% for tag in sorted_tags  %}
-    <h2 class="title" id="{{ tag[0] | slugify }}">#{{ tag[0] }}</h2>
-
-    <ul class="list">
-        {% assign pages_list = tag[1] %}
-        {% for post in pages_list %}
-        <li>
-            <a class="black-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
-            </a>
+<ul>
+    {% for tag in site.tags %}
+        <li id="{{ tag[0] }}">
+            <b>{{ tag[0] }}</b>
         </li>
+        {% for post in tag[1] %}
+            {{ post.date | date:"%Y-%m-%d" }} &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            <br>
         {% endfor %}
-        {% assign pages_list = nil %}
-        {% assign group = nil %}
-    </ul>
-
-    <div class="breaker"></div>
+        <br>
     {% endfor %}
-</section>
+</ul>

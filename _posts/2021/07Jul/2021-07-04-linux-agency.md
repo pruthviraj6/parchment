@@ -66,41 +66,41 @@ So, checked the GTFO bins where unix bin files can be abused to bypass security 
 **penelope's flag**: logging into penelope, the flag is present in the user dir.
 
 **maya's flag**: there's a base64 suid file for maya in penelope's machine. gtfob for base64 bin file using suid file. using the message, can read the flag file in maya's machine in home dir.
-![](../../../assets/images/agency/from_penelope_base64_bin_getting_to_maya.png)
+![](../../../assets/agency/from_penelope_base64_bin_getting_to_maya.png)
 
 **robert's passphrase**: using the flag, logged into maya's machine. 
-![](../../../assets/images/agency/on_maya_checking_for_roberts_stuff.png)
+![](../../../assets/agency/on_maya_checking_for_roberts_stuff.png)
 
 There's a ssh key that's robert's. 
-![](../../../assets/images/agency/on_maya_ssh_key_of_robert.png)
+![](../../../assets/agency/on_maya_ssh_key_of_robert.png)
 
 copy it, convert it using ssh2john to generate john format and crack the passphrase using john. cannot connect using passphrase to robert. logging in via ssh on tun0 machine IP using ssh key and passphrase is also not possible. checking network using socket stats, `ss` there's ssh running on port 2222 so running ssh on localhost port 2222 gives access.
-![](../../../assets/images/agency/hopping_from_maya_to_robert_using_ssh_key.png)
+![](../../../assets/agency/hopping_from_maya_to_robert_using_ssh_key.png)
 
 **user.txt**: in robert's machine the machine name is different - no longer linuxagency and *robert.txt* file gives a strange message. 
-![](../../../assets/images/agency/robert_sudo.png)
+![](../../../assets/agency/robert_sudo.png)
 
 checking the ip address gives the fact that we're on a docker container.  
-![](../../../assets/images/agency/on_maya_checking_for_network_connections.png)
+![](../../../assets/agency/on_maya_checking_for_network_connections.png)
 
 checking sudo priv > `(ALL, !root) /bin/bash` .The sudo bin version is 1.8.21p2 which has an exploit [exploit-db ID: 47502](https://www.exploit-db.com/exploits/47502) >> uid=root access gained. 
-![](../../../assets/images/agency/robert_to_root_getting_docker_access.png)
-![](../../../assets/images/agency/root_access_check.png)
+![](../../../assets/agency/robert_to_root_getting_docker_access.png)
+![](../../../assets/agency/root_access_check.png)
 
 user.txt in root dir
-![](../../../assets/images/agency/root_access_user_flag.png)
+![](../../../assets/agency/root_access_user_flag.png)
 
 **root.txt**: search for docker bin files on system. there's one in */tmp/docker* called mangoman. 
-![](../../../assets/images/agency/docker_search_term.png)
+![](../../../assets/agency/docker_search_term.png)
 
 using the gtfob for docker bin to gain docker host root shell. 
-![](../../../assets/images/agency/docker_bin_lib_run_to_get_root_access.png)
+![](../../../assets/agency/docker_bin_lib_run_to_get_root_access.png)
 
 access check:
-![](../../../assets/images/agency/host_root_access_gained.png)
+![](../../../assets/agency/host_root_access_gained.png)
 
 `cat /root/root.txt` will provide the final flag.
-![](../../../assets/images/agency/final_root_flag.png)
+![](../../../assets/agency/final_root_flag.png)
 
 #### Conclusion
 There's simple hoop to hoop jumping in the first half of the CTF. Getting the fundamentals proper. Later, jumping from machine to machine by absuing the bin files with acess to the next user to break out of current shell to their shell. Final three were intersting: taking an ssh key and sshkey_hash to crack the passphrase and gaining the passphrase (not password) to ssh into robert's machine which is a container. Abusing sudo bin file gain root access and then abusing docker bin file to gain host root access to complete the CTF.

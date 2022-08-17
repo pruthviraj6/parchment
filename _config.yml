@@ -1,72 +1,28 @@
-title: Pruthvi Raj # The title of the blog
-author: Pruthvi Raj # Your name 
-email: pruthviraj1398@gmail.com # your email shown in the footer
+title: cd /home/menu
+author: pruthvi raj
+subtitle: pursuing infosec
 
-url: "https://burningatlas.github.io" # this is your site's root address.
-
-
-
-description: > # this means to ignore newlines until "show_excerpts:" 
-  activities, accomplishments, challenges, courses, exploration
-favicon: "./favicon.ico" # set the favicon of the site 
-
-show_excerpts: false # set to true to show excerpts on the homepage
-  
-# Moving date format
-# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
-moving:
-  avatar_url: "https://www.pngall.com/wp-content/uploads/12/Avatar-PNG-Cutout.png" # avatar in about page
-  about_you: Security Researcher. Pursuing Infosec Responsibilities # short description about you in about page
-  date_format: "%b %d" # date format of posts in home page
-  back_to: "Home" # In the post page, you have a back button above the title, you can custom the text by yourself.
-
-  # generate social links in about page.
-  social_links:
-    # twitter: abhiguptaio
-    github:  burningatlas
-    # scholar: 
-    # researchgate: 
-    # rss: RSS
-    # dribbble: 
-    # facebook: 
-    # flickr:   
-    # instagram: 
-    linkedin: pruthvirajbhat
-    # pinterest: 
-    # youtube: 
-    # youtube_channel: 
-    # youtube_channel_name: 
-    # telegram: 
-    # googleplus: 
-    # microdotblog: 
-    # reddit: 
-
-    # Mastodon instances
-    # mastodon:
-    # - username: 
-    #   instance: 
-    # - username: 
-    #   instance: 
-
-# Build settings
-remote_theme: iitrabhi/moving
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
+url: "https://pruthvirajbhat.github.io"
 
 
+footer_only_homepage: true
+footer_url: "https://github.com/rahul-bothra"
+footer_text: "Theme by rahul-bothra"
 
-# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-# google_analytics: G-9W3VPP9B40
+profile-picture: assets/profile.png
+favicon_location: assets/favicon.ico
 
-# Text under the icons in footer
-footer-text:
+permalink: /:year-:month-:day-:title/
+sass:
+    style: compressed
+    sass_dir: css
 
-# JavaScript
-head_scripts:
-  - /assets/js/test.js
+navbar:
+ - name: "About"
+   link: "about"
+ - name: "Resume"
+   absolute-link: "https://raw.githubusercontent.com/pruthvirajbhat/pruthvirajbhat.github.io/master/Diya-Gupta.pdf"
+ - name: "Projects"
+   link: "projects"
 
-# https://jekyllrb.com/docs/collections/
-collections:
-  projects:
-    output: true
+markdown: kramdown
