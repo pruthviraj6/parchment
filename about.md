@@ -6,7 +6,7 @@ subtitle: pursuing infosec with a daily exploration strategy
 
 <img class="profile-picture" src="{{site.baseurl}}/{{site.profile-picture}}">
 
-My name is burningAtlas. And this is the best place to go unhinged!
+burningatlas.
 
 <!--I've been working as a Software Engineer since Feb 2021. And I have been simultaneously learning and working on my skills for getting into Cybersecuirty domain.-->
 
